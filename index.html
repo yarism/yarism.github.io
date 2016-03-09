@@ -2,710 +2,481 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     </head>
 <body>
-    <style>
-    /* -- import Roboto Font ---------------------------- */
-@import "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic";
-/* -- You can use this tables in Bootstrap (v3) projects. -- */
-/* -- Box model ------------------------------- */
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* -- Demo style ------------------------------- */
-html,
-body {
-  position: relative;
-  min-height: 100%;
-  height: 100%;
-}
-html {
-  position: relative;
-  overflow-x: hidden;
-  padding: 0;
-  min-height: 100%;
-  font-size: 62.5%;
-}
-body {
-  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  letter-spacing: 0.01rem;
-  color: #212121;
-  background-color: #f5f5f5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-#demo {
-  margin: 20px auto;
-  max-width: 960px;
-}
-#demo h1 {
-  font-size: 2.4rem;
-  line-height: 3.2rem;
-  letter-spacing: 0;
-  font-weight: 300;
-  color: #212121;
-  text-transform: inherit;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-#demo h2 {
-  font-size: 1.5rem;
-  line-height: 2.8rem;
-  letter-spacing: 0.01rem;
-  font-weight: 400;
-  color: #212121;
-  text-align: center;
-}
-.shadow-z-1 {
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-}
-/* -- Material Design Table style -------------- */
-.table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 2rem;
-  background-color: #fff;
-}
-.table > thead > tr,
-.table > tbody > tr,
-.table > tfoot > tr {
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  text-align: left;
-  padding: 1.6rem;
-  vertical-align: top;
-  border-top: 0;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.table > thead > tr > th {
-  font-weight: 400;
-  color: #757575;
-  vertical-align: bottom;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-.table > caption + thead > tr:first-child > th,
-.table > colgroup + thead > tr:first-child > th,
-.table > thead:first-child > tr:first-child > th,
-.table > caption + thead > tr:first-child > td,
-.table > colgroup + thead > tr:first-child > td,
-.table > thead:first-child > tr:first-child > td {
-  border-top: 0;
-}
-.table > tbody + tbody {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-.table .table {
-  background-color: #fff;
-}
-.table .no-border {
-  border: 0;
-}
-.table-condensed > thead > tr > th,
-.table-condensed > tbody > tr > th,
-.table-condensed > tfoot > tr > th,
-.table-condensed > thead > tr > td,
-.table-condensed > tbody > tr > td,
-.table-condensed > tfoot > tr > td {
-  padding: 0.8rem;
-}
-.table-bordered {
-  border: 0;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > thead > tr > td {
-  border-bottom-width: 2px;
-}
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #f5f5f5;
-}
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th {
-  background-color: rgba(0, 0, 0, 0.12);
-}
-@media screen and (max-width: 768px) {
-  .table-responsive-vertical > .table {
-    margin-bottom: 0;
-    background-color: transparent;
-  }
-  .table-responsive-vertical > .table > thead,
-  .table-responsive-vertical > .table > tfoot {
-    display: none;
-  }
-  .table-responsive-vertical > .table > tbody {
-    display: block;
-  }
-  .table-responsive-vertical > .table > tbody > tr {
-    display: block;
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    margin-bottom: 1.6rem;
-  }
-  .table-responsive-vertical > .table > tbody > tr > td {
-    background-color: #fff;
-    display: block;
-    vertical-align: middle;
-    text-align: right;
-  }
-  .table-responsive-vertical > .table > tbody > tr > td[data-title]:before {
-    content: attr(data-title);
-    float: left;
-    font-size: inherit;
-    font-weight: 400;
-    color: #757575;
-  }
-  .table-responsive-vertical.shadow-z-1 {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-  .table-responsive-vertical.shadow-z-1 > .table > tbody > tr {
-    border: none;
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-  }
-  .table-responsive-vertical > .table-bordered {
-    border: 0;
-  }
-  .table-responsive-vertical > .table-bordered > tbody > tr > td {
-    border: 0;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  .table-responsive-vertical > .table-bordered > tbody > tr > td:last-child {
-    border-bottom: 0;
-  }
-  .table-responsive-vertical > .table-striped > tbody > tr > td,
-  .table-responsive-vertical > .table-striped > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical > .table-striped > tbody > tr > td:nth-child(odd) {
-    background-color: #f5f5f5;
-  }
-  .table-responsive-vertical > .table-hover > tbody > tr:hover > td,
-  .table-responsive-vertical > .table-hover > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical > .table-hover > tbody > tr > td:hover {
-    background-color: rgba(0, 0, 0, 0.12);
-  }
-}
-.table-striped.table-mc-red > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-red > tbody > tr:nth-child(odd) > th {
-  background-color: #fde0dc;
-}
-.table-hover.table-mc-red > tbody > tr:hover > td,
-.table-hover.table-mc-red > tbody > tr:hover > th {
-  background-color: #f9bdbb;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-red > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-red > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-red > tbody > tr > td:nth-child(odd) {
-    background-color: #fde0dc;
-  }
-  .table-responsive-vertical .table-hover.table-mc-red > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-red > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-red > tbody > tr > td:hover {
-    background-color: #f9bdbb;
-  }
-}
-.table-striped.table-mc-pink > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-pink > tbody > tr:nth-child(odd) > th {
-  background-color: #fce4ec;
-}
-.table-hover.table-mc-pink > tbody > tr:hover > td,
-.table-hover.table-mc-pink > tbody > tr:hover > th {
-  background-color: #f8bbd0;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-pink > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-pink > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-pink > tbody > tr > td:nth-child(odd) {
-    background-color: #fce4ec;
-  }
-  .table-responsive-vertical .table-hover.table-mc-pink > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-pink > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-pink > tbody > tr > td:hover {
-    background-color: #f8bbd0;
-  }
-}
-.table-striped.table-mc-purple > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-purple > tbody > tr:nth-child(odd) > th {
-  background-color: #f3e5f5;
-}
-.table-hover.table-mc-purple > tbody > tr:hover > td,
-.table-hover.table-mc-purple > tbody > tr:hover > th {
-  background-color: #e1bee7;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-purple > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-purple > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-purple > tbody > tr > td:nth-child(odd) {
-    background-color: #f3e5f5;
-  }
-  .table-responsive-vertical .table-hover.table-mc-purple > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-purple > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-purple > tbody > tr > td:hover {
-    background-color: #e1bee7;
-  }
-}
-.table-striped.table-mc-deep-purple > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-deep-purple > tbody > tr:nth-child(odd) > th {
-  background-color: #ede7f6;
-}
-.table-hover.table-mc-deep-purple > tbody > tr:hover > td,
-.table-hover.table-mc-deep-purple > tbody > tr:hover > th {
-  background-color: #d1c4e9;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-deep-purple > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-deep-purple > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-deep-purple > tbody > tr > td:nth-child(odd) {
-    background-color: #ede7f6;
-  }
-  .table-responsive-vertical .table-hover.table-mc-deep-purple > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-deep-purple > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-deep-purple > tbody > tr > td:hover {
-    background-color: #d1c4e9;
-  }
-}
-.table-striped.table-mc-indigo > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-indigo > tbody > tr:nth-child(odd) > th {
-  background-color: #e8eaf6;
-}
-.table-hover.table-mc-indigo > tbody > tr:hover > td,
-.table-hover.table-mc-indigo > tbody > tr:hover > th {
-  background-color: #c5cae9;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-indigo > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-indigo > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-indigo > tbody > tr > td:nth-child(odd) {
-    background-color: #e8eaf6;
-  }
-  .table-responsive-vertical .table-hover.table-mc-indigo > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-indigo > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-indigo > tbody > tr > td:hover {
-    background-color: #c5cae9;
-  }
-}
-.table-striped.table-mc-blue > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-blue > tbody > tr:nth-child(odd) > th {
-  background-color: #e7e9fd;
-}
-.table-hover.table-mc-blue > tbody > tr:hover > td,
-.table-hover.table-mc-blue > tbody > tr:hover > th {
-  background-color: #d0d9ff;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-blue > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-blue > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-blue > tbody > tr > td:nth-child(odd) {
-    background-color: #e7e9fd;
-  }
-  .table-responsive-vertical .table-hover.table-mc-blue > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-blue > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-blue > tbody > tr > td:hover {
-    background-color: #d0d9ff;
-  }
-}
-.table-striped.table-mc-light-blue > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-light-blue > tbody > tr:nth-child(odd) > th {
-  background-color: #e1f5fe;
-}
-.table-hover.table-mc-light-blue > tbody > tr:hover > td,
-.table-hover.table-mc-light-blue > tbody > tr:hover > th {
-  background-color: #b3e5fc;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-light-blue > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-light-blue > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-light-blue > tbody > tr > td:nth-child(odd) {
-    background-color: #e1f5fe;
-  }
-  .table-responsive-vertical .table-hover.table-mc-light-blue > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-light-blue > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-light-blue > tbody > tr > td:hover {
-    background-color: #b3e5fc;
-  }
-}
-.table-striped.table-mc-cyan > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-cyan > tbody > tr:nth-child(odd) > th {
-  background-color: #e0f7fa;
-}
-.table-hover.table-mc-cyan > tbody > tr:hover > td,
-.table-hover.table-mc-cyan > tbody > tr:hover > th {
-  background-color: #b2ebf2;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-cyan > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-cyan > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-cyan > tbody > tr > td:nth-child(odd) {
-    background-color: #e0f7fa;
-  }
-  .table-responsive-vertical .table-hover.table-mc-cyan > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-cyan > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-cyan > tbody > tr > td:hover {
-    background-color: #b2ebf2;
-  }
-}
-.table-striped.table-mc-teal > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-teal > tbody > tr:nth-child(odd) > th {
-  background-color: #e0f2f1;
-}
-.table-hover.table-mc-teal > tbody > tr:hover > td,
-.table-hover.table-mc-teal > tbody > tr:hover > th {
-  background-color: #b2dfdb;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-teal > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-teal > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-teal > tbody > tr > td:nth-child(odd) {
-    background-color: #e0f2f1;
-  }
-  .table-responsive-vertical .table-hover.table-mc-teal > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-teal > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-teal > tbody > tr > td:hover {
-    background-color: #b2dfdb;
-  }
-}
-.table-striped.table-mc-green > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-green > tbody > tr:nth-child(odd) > th {
-  background-color: #d0f8ce;
-}
-.table-hover.table-mc-green > tbody > tr:hover > td,
-.table-hover.table-mc-green > tbody > tr:hover > th {
-  background-color: #a3e9a4;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-green > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-green > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-green > tbody > tr > td:nth-child(odd) {
-    background-color: #d0f8ce;
-  }
-  .table-responsive-vertical .table-hover.table-mc-green > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-green > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-green > tbody > tr > td:hover {
-    background-color: #a3e9a4;
-  }
-}
-.table-striped.table-mc-light-green > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-light-green > tbody > tr:nth-child(odd) > th {
-  background-color: #f1f8e9;
-}
-.table-hover.table-mc-light-green > tbody > tr:hover > td,
-.table-hover.table-mc-light-green > tbody > tr:hover > th {
-  background-color: #dcedc8;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-light-green > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-light-green > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-light-green > tbody > tr > td:nth-child(odd) {
-    background-color: #f1f8e9;
-  }
-  .table-responsive-vertical .table-hover.table-mc-light-green > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-light-green > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-light-green > tbody > tr > td:hover {
-    background-color: #dcedc8;
-  }
-}
-.table-striped.table-mc-lime > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-lime > tbody > tr:nth-child(odd) > th {
-  background-color: #f9fbe7;
-}
-.table-hover.table-mc-lime > tbody > tr:hover > td,
-.table-hover.table-mc-lime > tbody > tr:hover > th {
-  background-color: #f0f4c3;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-lime > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-lime > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-lime > tbody > tr > td:nth-child(odd) {
-    background-color: #f9fbe7;
-  }
-  .table-responsive-vertical .table-hover.table-mc-lime > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-lime > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-lime > tbody > tr > td:hover {
-    background-color: #f0f4c3;
-  }
-}
-.table-striped.table-mc-yellow > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-yellow > tbody > tr:nth-child(odd) > th {
-  background-color: #fffde7;
-}
-.table-hover.table-mc-yellow > tbody > tr:hover > td,
-.table-hover.table-mc-yellow > tbody > tr:hover > th {
-  background-color: #fff9c4;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-yellow > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-yellow > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-yellow > tbody > tr > td:nth-child(odd) {
-    background-color: #fffde7;
-  }
-  .table-responsive-vertical .table-hover.table-mc-yellow > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-yellow > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-yellow > tbody > tr > td:hover {
-    background-color: #fff9c4;
-  }
-}
-.table-striped.table-mc-amber > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-amber > tbody > tr:nth-child(odd) > th {
-  background-color: #fff8e1;
-}
-.table-hover.table-mc-amber > tbody > tr:hover > td,
-.table-hover.table-mc-amber > tbody > tr:hover > th {
-  background-color: #ffecb3;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-amber > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-amber > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-amber > tbody > tr > td:nth-child(odd) {
-    background-color: #fff8e1;
-  }
-  .table-responsive-vertical .table-hover.table-mc-amber > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-amber > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-amber > tbody > tr > td:hover {
-    background-color: #ffecb3;
-  }
-}
-.table-striped.table-mc-orange > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-orange > tbody > tr:nth-child(odd) > th {
-  background-color: #fff3e0;
-}
-.table-hover.table-mc-orange > tbody > tr:hover > td,
-.table-hover.table-mc-orange > tbody > tr:hover > th {
-  background-color: #ffe0b2;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-orange > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-orange > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-orange > tbody > tr > td:nth-child(odd) {
-    background-color: #fff3e0;
-  }
-  .table-responsive-vertical .table-hover.table-mc-orange > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-orange > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-orange > tbody > tr > td:hover {
-    background-color: #ffe0b2;
-  }
-}
-.table-striped.table-mc-deep-orange > tbody > tr:nth-child(odd) > td,
-.table-striped.table-mc-deep-orange > tbody > tr:nth-child(odd) > th {
-  background-color: #fbe9e7;
-}
-.table-hover.table-mc-deep-orange > tbody > tr:hover > td,
-.table-hover.table-mc-deep-orange > tbody > tr:hover > th {
-  background-color: #ffccbc;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive-vertical .table-striped.table-mc-deep-orange > tbody > tr > td,
-  .table-responsive-vertical .table-striped.table-mc-deep-orange > tbody > tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-striped.table-mc-deep-orange > tbody > tr > td:nth-child(odd) {
-    background-color: #fbe9e7;
-  }
-  .table-responsive-vertical .table-hover.table-mc-deep-orange > tbody > tr:hover > td,
-  .table-responsive-vertical .table-hover.table-mc-deep-orange > tbody > tr:hover {
-    background-color: #fff;
-  }
-  .table-responsive-vertical .table-hover.table-mc-deep-orange > tbody > tr > td:hover {
-    background-color: #ffccbc;
-  }
-}
-</style>
-    <style>
+  <style>
+      * {
+      box-sizing: border-box;
+    }
 
-        nav .nav-wrapper {
-            background-color: #009688;
-            margin-bottom: 40px;
-        }
-    </style>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Preferensaktiker</a>
-            <!-- ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Om</a></li>
-            </ul -->
+    .strips {
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      color: white;
+    }
+    .strips__strip {
+      will-change: width, left, z-index, height;
+      position: absolute;
+      width: 20%;
+      min-height: 100vh;
+      overflow: hidden;
+      cursor: pointer;
+      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .strips__strip:nth-child(1) {
+      left: 0;
+    }
+    .strips__strip:nth-child(2) {
+      left: 20vw;
+    }
+    .strips__strip:nth-child(3) {
+      left: 40vw;
+    }
+    .strips__strip:nth-child(4) {
+      left: 60vw;
+    }
+    .strips__strip:nth-child(5) {
+      left: 80vw;
+    }
+    .strips__strip:nth-child(1) .strip__content {
+      background: #244F75;
+      -webkit-transform: translate3d(-100%, 0, 0);
+              transform: translate3d(-100%, 0, 0);
+      -webkit-animation-name: strip1;
+              animation-name: strip1;
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s;
+    }
+    .strips__strip:nth-child(2) .strip__content {
+      background: #60BFBF;
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0);
+      -webkit-animation-name: strip2;
+              animation-name: strip2;
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s;
+    }
+    .strips__strip:nth-child(3) .strip__content {
+      background: #8C4B7E;
+      -webkit-transform: translate3d(0, -100%, 0);
+              transform: translate3d(0, -100%, 0);
+      -webkit-animation-name: strip3;
+              animation-name: strip3;
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+    }
+    .strips__strip:nth-child(4) .strip__content {
+      background: #F8BB44;
+      -webkit-transform: translate3d(0, 100%, 0);
+              transform: translate3d(0, 100%, 0);
+      -webkit-animation-name: strip4;
+              animation-name: strip4;
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s;
+    }
+    .strips__strip:nth-child(5) .strip__content {
+      background: #F24B4B;
+      -webkit-transform: translate3d(100%, 0, 0);
+              transform: translate3d(100%, 0, 0);
+      -webkit-animation-name: strip5;
+              animation-name: strip5;
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s;
+    }
+    .strips__strip {
+      min-height: 20vh;
+    }
+    .strips__strip:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    .strips__strip:nth-child(2) {
+      top: 20vh;
+      left: 0;
+      width: 100%;
+    }
+    .strips__strip:nth-child(3) {
+      top: 40vh;
+      left: 0;
+      width: 100%;
+    }
+    .strips__strip:nth-child(4) {
+      top: 60vh;
+      left: 0;
+      width: 100%;
+    }
+    .strips__strip:nth-child(5) {
+      top: 80vh;
+      left: 0;
+      width: 100%;
+    }
+    .strips .strip__content {
+      -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+      -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+              animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+    .strips .strip__content:hover:before {
+      -webkit-transform: skew(-30deg) scale(3) translate(0, 0);
+              transform: skew(-30deg) scale(3) translate(0, 0);
+      opacity: 0.1;
+    }
+    .strips .strip__content:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 0.05;
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-transform: skew(-30deg) scaleY(1) translate(0, 0);
+              transform: skew(-30deg) scaleY(1) translate(0, 0);
+      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .strips .strip__inner-text {
+      will-change: transform, opacity;
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      -webkit-transform: translate(-50%, -50%) scale(0.5);
+              transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .strips__strip--expanded {
+      width: 100%;
+      top: 0 !important;
+      left: 0 !important;
+      z-index: 3;
+      cursor: default;
+    }
+    .strips__strip--expanded {
+      min-height: 100vh;
+    }
+    .strips__strip--expanded .strip__content:hover:before {
+      -webkit-transform: skew(-30deg) scale(1) translate(0, 0);
+              transform: skew(-30deg) scale(1) translate(0, 0);
+      opacity: 0.05;
+    }
+    .strips__strip--expanded .strip__title {
+      opacity: 0;
+    }
+    .strips__strip--expanded .strip__inner-text {
+      opacity: 1;
+      -webkit-transform: translate(-50%, -50%) scale(1);
+              transform: translate(-50%, -50%) scale(1);
+    }
+
+    .strip__title {
+      display: block;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      font-size: 3.5vw;
+      color: white;
+      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    @media screen and (max-width: 760px) {
+      .strip__title {
+        font-size: 28px;
+      }
+    }
+
+    .strip__close {
+      position: absolute;
+      right: 3vw;
+      top: 3vw;
+      opacity: 0;
+      z-index: 10;
+      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer;
+      -webkit-transition-delay: 0.5s;
+              transition-delay: 0.5s;
+    }
+    .strip__close--show {
+      opacity: 1;
+    }
+
+    @-webkit-keyframes strip1 {
+      0% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes strip1 {
+      0% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @-webkit-keyframes strip2 {
+      0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @keyframes strip2 {
+      0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @-webkit-keyframes strip3 {
+      0% {
+        -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @keyframes strip3 {
+      0% {
+        -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @-webkit-keyframes strip4 {
+      0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @keyframes strip4 {
+      0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @-webkit-keyframes strip5 {
+      0% {
+        -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    @keyframes strip5 {
+      0% {
+        -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+      }
+    }
+    /* Demo purposes */
+    body {
+      font-family: 'Open Sans';
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      line-height: 1.5;
+    }
+
+    h1, h2 {
+      font-weight: 300;
+    }
+
+    .fa {
+      font-size: 30px;
+      color: white;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin: 0 0 16px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+  </style>
+  
+  <section class="strips">
+    <article class="strips__strip">
+      <div class="strip__content">
+        <h1 class="strip__title" data-name="Lorem">Awesome</h1>
+        <div class="strip__inner-text">
+          <h2>Ettrics</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+          <p>
+            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
+          </p>
         </div>
-    </nav>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m9 l10">
+        
+      </div>
+    </article>
+    <article class="strips__strip">
+      <div class="strip__content">
+        <h1 class="strip__title" data-name="Ipsum">Words</h1>
+        <div class="strip__inner-text">
+          <h2>Ettrics</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+          <p>
+            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
+          </p>
+        </div>
+      </div>
+    </article>
+    <article class="strips__strip">
+      <div class="strip__content">
+        <h1 class="strip__title" data-name="Dolor">Go</h1>
+        <div class="strip__inner-text">
+          <h2>Ettrics</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+          <p>
+            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
+          </p>
+        </div>
+      </div>
+    </article>
+    <article class="strips__strip">
+      <div class="strip__content">
+        <h1 class="strip__title" data-name="Sit">Inside</h1>
+        <div class="strip__inner-text">
+          <h2>Ettrics</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+          <p>
+            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
+          </p>
+        </div>
+      </div>
+    </article>
+    <article class="strips__strip">
+      <div class="strip__content">
+        <h1 class="strip__title" data-name="Amet">Here</h1>
+        <div class="strip__inner-text">
+          <h2>Ettrics</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
+          <p>
+            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
+          </p>
+        </div>
+      </div>
+    </article>
+    <i class="fa fa-close strip__close"></i>
+  </section>
 
-                    <div id="collections" class="section scrollspy">
-                        <div class="row">
-                            <div class="col s12">
-                                <h4 class="light" style="margin-top: 20px;">Preferensaktier</h4>
-                                <p class="caption" style="font-size: 16px; line-height: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <script>
+  var Expand = (function() {
+  var tile = $('.strips__strip');
+  var tileLink = $('.strips__strip > .strip__content');
+  var tileText = tileLink.find('.strip__inner-text');
+  var stripClose = $('.strip__close');
+  
+  var expanded  = false;
 
-        <h4 class="light" style="margin-bottom: 20px;">Jämförelse</h4>
-        <div class="table-responsive-vertical shadow-z-1">
-            <table id="table" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Namn</th>
-                        <th>Direktavkastning</th>
-                        <th>Villkor</th>
-                    </tr>
-                </thead>
-              <tbody>
-                <tr>
-                    <td data-title="Namn">
-                        <a href="#">Ratos pref</a>
-                    </td>
-                    <td data-title="Direktavkastning">5,5 %</td>
-                    <td data-title="Villkor">
-                        <a href="#">Mer info</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="Namn">
-                        <a href="#">Ratos pref ett lite längre namn här</a>
-                    </td>
-                    <td data-title="Direktavkastning">6 %</td>
-                    <td data-title="Villkor">
-                        <a href="#">Mer info</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="Namn">
-                        <a href="#">Ratos pref</a>
-                    </td>
-                    <td data-title="Direktavkastning">10,5 %</td>
-                    <td data-title="Villkor">
-                        <a href="#">Mer info</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="Namn">
-                        <a href="#">Ratos pref ett annat namn här</a>
-                    </td>
-                    <td data-title="Direktavkastning">5,5 %</td>
-                    <td data-title="Villkor">
-                        <a href="#">Mer info</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="Namn">
-                        <a href="#">Ratos pref</a>
-                    </td>
-                    <td data-title="Direktavkastning">5,5 %</td>
-                    <td data-title="Villkor">
-                        <a href="#">Mer info</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td data-title="Namn">
-                        <a href="#">Ratos pref</a>
-                    </td>
-                    <td data-title="Direktavkastning">5,5 %</td>
-                    <td data-title="Villkor">
-                        <a href="#">Mer info</a>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  var open = function() {
+      
+    var tile = $(this).parent();
+
+      if (!expanded) {
+        tile.addClass('strips__strip--expanded');
+        // add delay to inner text
+        tileText.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
+        stripClose.addClass('strip__close--show');
+        stripClose.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
+        expanded = true;
+      } 
+    };
+  
+  var close = function() {
+    if (expanded) {
+      tile.removeClass('strips__strip--expanded');
+      // remove delay from inner text
+      tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
+      stripClose.removeClass('strip__close--show');
+      stripClose.css('transition', 'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)')
+      expanded = false;
+    }
+  }
+
+    var bindActions = function() {
+      tileLink.on('click', open);
+      stripClose.on('click', close);
+    };
+
+    var init = function() {
+      bindActions();
+    };
+
+    return {
+      init: init
+    };
+
+  }());
+
+Expand.init();
+</script>
 </body>
 </html>
