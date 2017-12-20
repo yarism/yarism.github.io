@@ -1,482 +1,1161 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    </head>
-<body>
-  <style>
-      * {
-      box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.preceden.com/timelines/339301-story-wars -->
+<html lang="en" class="wf-proximanova-n7-active wf-proximanova-n4-active wf-proximanova-i4-active wf-proximanova-n3-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Story Wars _ Preceden_files/track"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(1)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(2)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(3)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(4)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(5)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(6)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/e90f5dece2"></script><script src="./Story Wars _ Preceden_files/nr-1071.min.js"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/track(7)"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/identify"></script><script type="text/javascript" src="./Story Wars _ Preceden_files/visit"></script>
+			<title>
+					Story Wars | Preceden
+			</title>
+			<link rel="shortcut icon" type="image/x-icon" href="https://d25qqnt46f8ef2.cloudfront.net/assets/preceden-231597999764dec7ba7a5b39958b9dedae3b7850a1e125775e45c0bde49f9f67.ico">
+			<link rel="apple-touch-icon" href="https://www.preceden.com/apple-touch-icon.png">
+			<link rel="apple-touch-icon-precomposed" href="https://www.preceden.com/apple-touch-icon-precomposed.png">
+			<link rel="canonical" href="https://www.preceden.com/timelines/339301-story-wars">
 
-    .strips {
-      min-height: 100vh;
-      text-align: center;
-      overflow: hidden;
-      color: white;
-    }
-    .strips__strip {
-      will-change: width, left, z-index, height;
-      position: absolute;
-      width: 20%;
-      min-height: 100vh;
-      overflow: hidden;
-      cursor: pointer;
-      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .strips__strip:nth-child(1) {
-      left: 0;
-    }
-    .strips__strip:nth-child(2) {
-      left: 20vw;
-    }
-    .strips__strip:nth-child(3) {
-      left: 40vw;
-    }
-    .strips__strip:nth-child(4) {
-      left: 60vw;
-    }
-    .strips__strip:nth-child(5) {
-      left: 80vw;
-    }
-    .strips__strip:nth-child(1) .strip__content {
-      background: #244F75;
-      -webkit-transform: translate3d(-100%, 0, 0);
-              transform: translate3d(-100%, 0, 0);
-      -webkit-animation-name: strip1;
-              animation-name: strip1;
-      -webkit-animation-delay: 0.1s;
-              animation-delay: 0.1s;
-    }
-    .strips__strip:nth-child(2) .strip__content {
-      background: #60BFBF;
-      -webkit-transform: translate3d(0, 100%, 0);
-              transform: translate3d(0, 100%, 0);
-      -webkit-animation-name: strip2;
-              animation-name: strip2;
-      -webkit-animation-delay: 0.2s;
-              animation-delay: 0.2s;
-    }
-    .strips__strip:nth-child(3) .strip__content {
-      background: #8C4B7E;
-      -webkit-transform: translate3d(0, -100%, 0);
-              transform: translate3d(0, -100%, 0);
-      -webkit-animation-name: strip3;
-              animation-name: strip3;
-      -webkit-animation-delay: 0.3s;
-              animation-delay: 0.3s;
-    }
-    .strips__strip:nth-child(4) .strip__content {
-      background: #F8BB44;
-      -webkit-transform: translate3d(0, 100%, 0);
-              transform: translate3d(0, 100%, 0);
-      -webkit-animation-name: strip4;
-              animation-name: strip4;
-      -webkit-animation-delay: 0.4s;
-              animation-delay: 0.4s;
-    }
-    .strips__strip:nth-child(5) .strip__content {
-      background: #F24B4B;
-      -webkit-transform: translate3d(100%, 0, 0);
-              transform: translate3d(100%, 0, 0);
-      -webkit-animation-name: strip5;
-              animation-name: strip5;
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s;
-    }
-    .strips__strip {
-      min-height: 20vh;
-    }
-    .strips__strip:nth-child(1) {
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-    .strips__strip:nth-child(2) {
-      top: 20vh;
-      left: 0;
-      width: 100%;
-    }
-    .strips__strip:nth-child(3) {
-      top: 40vh;
-      left: 0;
-      width: 100%;
-    }
-    .strips__strip:nth-child(4) {
-      top: 60vh;
-      left: 0;
-      width: 100%;
-    }
-    .strips__strip:nth-child(5) {
-      top: 80vh;
-      left: 0;
-      width: 100%;
-    }
-    .strips .strip__content {
-      -webkit-animation-duration: 1s;
-              animation-duration: 1s;
-      -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-              animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-    }
-    .strips .strip__content:hover:before {
-      -webkit-transform: skew(-30deg) scale(3) translate(0, 0);
-              transform: skew(-30deg) scale(3) translate(0, 0);
-      opacity: 0.1;
-    }
-    .strips .strip__content:before {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      opacity: 0.05;
-      -webkit-transform-origin: center center;
-              transform-origin: center center;
-      -webkit-transform: skew(-30deg) scaleY(1) translate(0, 0);
-              transform: skew(-30deg) scaleY(1) translate(0, 0);
-      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .strips .strip__inner-text {
-      will-change: transform, opacity;
-      position: absolute;
-      z-index: 5;
-      top: 50%;
-      left: 50%;
-      width: 70%;
-      -webkit-transform: translate(-50%, -50%) scale(0.5);
-              transform: translate(-50%, -50%) scale(0.5);
-      opacity: 0;
-      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .strips__strip--expanded {
-      width: 100%;
-      top: 0 !important;
-      left: 0 !important;
-      z-index: 3;
-      cursor: default;
-    }
-    .strips__strip--expanded {
-      min-height: 100vh;
-    }
-    .strips__strip--expanded .strip__content:hover:before {
-      -webkit-transform: skew(-30deg) scale(1) translate(0, 0);
-              transform: skew(-30deg) scale(1) translate(0, 0);
-      opacity: 0.05;
-    }
-    .strips__strip--expanded .strip__title {
-      opacity: 0;
-    }
-    .strips__strip--expanded .strip__inner-text {
-      opacity: 1;
-      -webkit-transform: translate(-50%, -50%) scale(1);
-              transform: translate(-50%, -50%) scale(1);
-    }
+			
+<script src="./Story Wars _ Preceden_files/iqb8mys.js" async=""></script><script type="text/javascript" async="" src="./Story Wars _ Preceden_files/saved_resource"></script><script async="" src="./Story Wars _ Preceden_files/analytics.js"></script><script type="text/javascript" async="" src="./Story Wars _ Preceden_files/amplitude-2.9.0-min.gz.js"></script><script type="text/javascript" async="" src="./Story Wars _ Preceden_files/mixpanel-2-latest.min.js"></script><script type="text/javascript" async="" src="./Story Wars _ Preceden_files/3089522.js"></script><script async="" src="./Story Wars _ Preceden_files/fs.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"e90f5dece2","applicationID":"502935","transactionName":"ew1cEEpaCFVWEU0XCFUHXg1WUBcWQAsNFA==","queueTime":1,"applicationTime":364,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwcPVl9ADQMCXVJX"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="description" content="">
 
-    .strip__title {
-      display: block;
-      margin: 0;
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      font-size: 3.5vw;
-      color: white;
-      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    @media screen and (max-width: 760px) {
-      .strip__title {
-        font-size: 28px;
-      }
-    }
+			<meta name="stripe-key" content="pk_0A0eZQwaQbq7Q1gImzqHhNpWaoJh1">
+			<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Ccl/LW9W7DpGt4UEPL2ELs1och8IknVwoSC+MYIZ9OFCgaUpQHJsuv0K5k1jy6dQtUBQw4YYZboz6UZkccGC/A==">
+				<meta name="timeline_page_id" content="editor">
+				<meta name="has_edit_rights" content="true">
 
-    .strip__close {
-      position: absolute;
-      right: 3vw;
-      top: 3vw;
-      opacity: 0;
-      z-index: 10;
-      -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      cursor: pointer;
-      -webkit-transition-delay: 0.5s;
-              transition-delay: 0.5s;
-    }
-    .strip__close--show {
-      opacity: 1;
-    }
+					<meta name="robots" content="noindex">
 
-    @-webkit-keyframes strip1 {
-      0% {
-        -webkit-transform: translate3d(-100%, 0, 0);
-                transform: translate3d(-100%, 0, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
+			<link rel="stylesheet" media="screen" href="./Story Wars _ Preceden_files/application-b49b35250631c21a1e70f2e5c753a6b87e1584899b0a2e59a9a33e52f0bc648d.css">
+			
 
-    @keyframes strip1 {
-      0% {
-        -webkit-transform: translate3d(-100%, 0, 0);
-                transform: translate3d(-100%, 0, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @-webkit-keyframes strip2 {
-      0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @keyframes strip2 {
-      0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @-webkit-keyframes strip3 {
-      0% {
-        -webkit-transform: translate3d(0, -100%, 0);
-                transform: translate3d(0, -100%, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @keyframes strip3 {
-      0% {
-        -webkit-transform: translate3d(0, -100%, 0);
-                transform: translate3d(0, -100%, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @-webkit-keyframes strip4 {
-      0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @keyframes strip4 {
-      0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @-webkit-keyframes strip5 {
-      0% {
-        -webkit-transform: translate3d(100%, 0, 0);
-                transform: translate3d(100%, 0, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    @keyframes strip5 {
-      0% {
-        -webkit-transform: translate3d(100%, 0, 0);
-                transform: translate3d(100%, 0, 0);
-      }
-      100% {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-      }
-    }
-    /* Demo purposes */
-    body {
-      font-family: 'Open Sans';
-      -webkit-font-smoothing: antialiased;
-      text-rendering: geometricPrecision;
-      line-height: 1.5;
-    }
-
-    h1, h2 {
-      font-weight: 300;
-    }
-
-    .fa {
-      font-size: 30px;
-      color: white;
-    }
-
-    h2 {
-      font-size: 36px;
-      margin: 0 0 16px;
-    }
-
-    p {
-      margin: 0 0 16px;
-    }
-  </style>
-  
-  <section class="strips">
-    <article class="strips__strip">
-      <div class="strip__content">
-        <h1 class="strip__title" data-name="Lorem">Awesome</h1>
-        <div class="strip__inner-text">
-          <h2>Ettrics</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
-          <p>
-            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
-          </p>
-        </div>
-        
-      </div>
-    </article>
-    <article class="strips__strip">
-      <div class="strip__content">
-        <h1 class="strip__title" data-name="Ipsum">Words</h1>
-        <div class="strip__inner-text">
-          <h2>Ettrics</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
-          <p>
-            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
-          </p>
-        </div>
-      </div>
-    </article>
-    <article class="strips__strip">
-      <div class="strip__content">
-        <h1 class="strip__title" data-name="Dolor">Go</h1>
-        <div class="strip__inner-text">
-          <h2>Ettrics</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
-          <p>
-            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
-          </p>
-        </div>
-      </div>
-    </article>
-    <article class="strips__strip">
-      <div class="strip__content">
-        <h1 class="strip__title" data-name="Sit">Inside</h1>
-        <div class="strip__inner-text">
-          <h2>Ettrics</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
-          <p>
-            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
-          </p>
-        </div>
-      </div>
-    </article>
-    <article class="strips__strip">
-      <div class="strip__content">
-        <h1 class="strip__title" data-name="Amet">Here</h1>
-        <div class="strip__inner-text">
-          <h2>Ettrics</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
-          <p>
-            <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
-          </p>
-        </div>
-      </div>
-    </article>
-    <i class="fa fa-close strip__close"></i>
-  </section>
-
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
-  <script>
-  var Expand = (function() {
-  var tile = $('.strips__strip');
-  var tileLink = $('.strips__strip > .strip__content');
-  var tileText = tileLink.find('.strip__inner-text');
-  var stripClose = $('.strip__close');
-  
-  var expanded  = false;
-
-  var open = function() {
-      
-    var tile = $(this).parent();
-
-      if (!expanded) {
-        tile.addClass('strips__strip--expanded');
-        // add delay to inner text
-        tileText.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
-        stripClose.addClass('strip__close--show');
-        stripClose.css('transition', 'all .6s 1s cubic-bezier(0.23, 1, 0.32, 1)');
-        expanded = true;
-      } 
-    };
-  
-  var close = function() {
-    if (expanded) {
-      tile.removeClass('strips__strip--expanded');
-      // remove delay from inner text
-      tileText.css('transition', 'all 0.15s 0 cubic-bezier(0.23, 1, 0.32, 1)');
-      stripClose.removeClass('strip__close--show');
-      stripClose.css('transition', 'all 0.2s 0s cubic-bezier(0.23, 1, 0.32, 1)')
-      expanded = false;
-    }
-  }
-
-    var bindActions = function() {
-      tileLink.on('click', open);
-      stripClose.on('click', close);
-    };
-
-    var init = function() {
-      bindActions();
-    };
-
-    return {
-      init: init
-    };
-
-  }());
-
-Expand.init();
+				<script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'www.fullstory.com';
+window['_fs_org'] = 'H78Y';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+    d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+    ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+})(window,document,window['_fs_namespace'],'script','user');
 </script>
-</body>
-</html>
+
+
+					<script>
+						FS.identify( '199107', {
+							email: 'joakim.johansson@storywars.net',
+							vertical_str: 'work',
+							plan_id_int: '55',
+							default_timeline_visibility_str: 'N/A'
+						} );
+					</script><style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-proxima-nova-n7;src:url(https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:tk-proxima-nova-n4;src:url(https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:tk-proxima-nova-i4;src:url(https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:tk-proxima-nova-n3;src:url(https://use.typekit.net/af/faad97/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/faad97/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/faad97/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}</style><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/75f50f/00000000000000003b9b093b/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/03ff77/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/d0b1d4/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/faad97/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/faad97/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/faad97/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}</style>
+	</head>
+	<body class="timelines show" style="position: relative;" cz-shortcut-listen="true">
+		</div>
+			
+
+
+
+			<div class="timeline-wrapper">
+				
+				
+
+<div class="school-autobiography-notice">
+	<h3>Are you creating timeline about your own life?</h3>
+	<p>If so, we'll make the timeline private so that it doesn't appear on search engines.</p>
+
+	<a href="https://www.preceden.com/timelines/339301-story-wars#" class="autobiography-answer" id="yes">Make this timeline private</a>
+	<a href="https://www.preceden.com/timelines/339301-story-wars#" class="autobiography-answer" id="no">It's OK that this timeline is visible on search engines</a>
+</div>
+
+
+<div class="information">
+	<h1 class="timeline-name editor">Story Wars</h1>
+	<h2 class="description constrain-content"></h2>
+
+
+</div>
+
+<div class="timeline timeline-339301 theme-line white border-all" data-timeline-id="339301">
+	<div class="popup constrain-content" style="left: 793px; top: 354px; display: none;"><div class="nub" style="left: 7px;"></div><div class="name">Optimization of app</div><div class="dates">Approx. 1 March 2018 - Approx. 31 May 2018<span> (3 months)</span></div><div><p>Retention, referral, conversation, monetization all need to work. We need to set goals for these as well.</p>
+</div></div>
+	<div class="aperture theme-odd" style="font-size: 14px;">
+		
+	<div class="overlays"><div class="zoom-selection"></div></div><div class="slider"><div class="axis-label test">Nov</div><div class="tickers clearfix unselectable theme-odd position-top push-to-back" style="width: 2322px;"><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 187px;">Feb</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 207px;">Mar</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 200px;">Apr</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 207px;">May</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 201px;">Jun</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 206px;">Jul</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 207px;">Aug</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 201px;">Sep</div><div class="axis-label theme-text centered unselectable" unselectable="on" style="width: 206px;">Oct</div></div><div class="axes unselectable"><div class="axis theme-line" style="left: 187px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 394px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 594px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 801px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 1002px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 1208px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 1415px; top: -10000px; height: 20000px;"></div><div class="axis theme-line" style="left: 1616px; top: -10000px; height: 20000px;"></div></div><div class="layer unselectable zoom-selectable theme-line theme-odd" style="height: 274px;"><div class="bar unselectable slightly-round" data-id="2457703" style="left: 802px; top: 225px; width: 906px; height: 28px; background: rgb(233, 30, 99);"></div><div class="circa unselectable start-at" style="left: 802px; width: 35px; top: 225px; height: 28px; background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(233, 30, 99) 100%);">.</div><div class="circa unselectable end-at" style="left: 1672px; top: 225px; width: 37px; height: 28px; background: linear-gradient(to right, rgb(233, 30, 99) 0%, rgb(255, 255, 255) 100%);">.</div><div class="name unselectable bar-name edit-rights" data-id="2457703" style="left: 801px; top: 226px; color: rgb(255, 255, 255); width: 908px;">Skala upp, investering in</div><span class="event-display-dates absolute no-padding" style="left: 801px; top: 253px; width: 908px;">Approx. 1 June 2018 - Approx. 14 October 2018</span><div class="name unselectable instant-name edit-rights" data-id="2457697" style="padding: 0px; left: 793.5px; top: 176px; color: rgb(244, 81, 30); margin-right: 10px;"><span class="symbol character-9679">●</span>Launch world wide</div><span class="event-display-dates absolute no-padding" style="left: 813.5px; top: 198px;">1 June 2018</span><div class="bar unselectable slightly-round" data-id="2457696" style="left: 188px; top: 78px; width: 612px; height: 28px; background: rgb(57, 73, 171);"></div><div class="circa unselectable start-at" style="left: 188px; width: 23px; top: 78px; height: 28px; background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(57, 73, 171) 100%);">.</div><div class="circa unselectable end-at" style="left: 776px; top: 78px; width: 25px; height: 28px; background: linear-gradient(to right, rgb(57, 73, 171) 0%, rgb(255, 255, 255) 100%);">.</div><div class="name unselectable bar-name edit-rights" data-id="2457696" style="left: 187px; top: 79px; color: rgb(255, 255, 255); width: 614px;">Optimization of app</div><span class="event-display-dates absolute no-padding" style="left: 187px; top: 106px; width: 614px;">Approx. 1 March 2018 - Approx. 31 May 2018</span><div class="name unselectable instant-name edit-rights" data-id="2457694" style="padding: 0px; left: 179.5px; top: 127px; color: rgb(229, 57, 53); margin-right: 10px;"><span class="symbol character-9679">●</span>Soft launch app</div><div class="name unselectable instant-name edit-rights" data-id="2457694" style="padding: 0px; left: 59.5px; top: 0px; color: blue; margin-right: 10px;"><span class="symbol character-9679">●</span>Marknadsförarare in</div><span class="event-display-dates absolute no-padding" style="left: 199.5px; top: 149px;">Approx. 1 March 2018</span><div class="bar unselectable slightly-round" data-id="2457691" style="left: 75px; top: 29px; width: 398px; height: 28px; background: rgb(67, 160, 71);"></div><div class="circa unselectable start-at" style="left: 75px; width: 14px; top: 29px; height: 28px; background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(67, 160, 71) 100%);">.</div><div class="circa unselectable end-at" style="left: 458px; top: 29px; width: 16px; height: 28px; background: linear-gradient(to right, rgb(67, 160, 71) 0%, rgb(255, 255, 255) 100%);">.</div><div class="name unselectable bar-name edit-rights" data-id="2457691" style="left: 74px; top: 30px; color: rgb(255, 255, 255); width: 400px;">Backend fix</div><span class="event-display-dates absolute no-padding" style="left: 74px; top: 57px; width: 400px;">Approx. 12 February 2018 - Approx. 12 April 2018</span></div></div></div>
+</div>
+
+
+
+	<div class="global-layer-and-event-list editor" style="display: block;">
+				
+
+	<div class="layer-container" data-layer-id="552105">
+	<div class="layer-details visible">
+		<h2 class="layer-name">Events</h2>
+			<p class="empty-layer-notice notice">
+				This layer doesn't contain any events and hasn't been changed in a while. <a href="https://www.preceden.com/timelines/339301-story-wars#">Remove it from your timeline</a>.
+			</p>
+	</div>
+
+	<div class="layer-and-event-separator visible"></div>
+
+	<div class="events-container visible">
+		<div class="events">
+		<div class="event-container" style="">
+	<div class="event-details" data-event-id="2457691" data-start-epoch="1518393600">
+		<div class="event-color" style="background: #43A047"></div>
+		<h3 class="event-name constrain-content">Backend fix</h3>
+		<time>Approx. 12 February 2018 - Approx. 12 April 2018</time>
+	</div>
+</div><div class="event-container" style="">
+	<div class="event-details" data-event-id="2457696" data-start-epoch="1519862400">
+		<div class="event-color" style="background: #3949AB"></div>
+		<h3 class="event-name constrain-content">Optimization of app</h3>
+		<time>Approx. 1 March 2018 - Approx. 31 May 2018</time>
+	</div>
+		<div class="event-description notes constrain-content">
+			<p>Retention, referral, conversation, monetization all need to work. We need to set goals for these as well.</p>
+
+		</div>
+</div><div class="event-container" style="">
+	<div class="event-details" data-event-id="2457694" data-start-epoch="1519862400">
+		<div class="event-color" style="background: #E53935"></div>
+		<h3 class="event-name constrain-content">Soft launch app</h3>
+		<time>Approx. 1 March 2018</time>
+	</div>
+</div><div class="event-container" style="">
+	<div class="event-details" data-event-id="2457703" data-start-epoch="1527811200">
+		<div class="event-color" style="background: #E91E63"></div>
+		<h3 class="event-name constrain-content">Skala upp, investering in</h3>
+		<time>Approx. 1 June 2018 - Approx. 14 October 2018</time>
+	</div>
+</div><div class="event-container" style="">
+	<div class="event-details" data-event-id="2457697" data-start-epoch="1527811200">
+		<div class="event-color" style="background: #F4511E"></div>
+		<h3 class="event-name constrain-content">Launch world wide</h3>
+		<time>1 June 2018</time>
+	</div>
+</div></div>
+	</div>
+</div></div>
+
+<div class="timeline-dialog dialog design">
+	<form id="timeline" autocomplete="off" action="https://www.preceden.com/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Ccl/LW9W7DpGt4UEPL2ELs1och8IknVwoSC+MYIZ9OFCgaUpQHJsuv0K5k1jy6dQtUBQw4YYZboz6UZkccGC/A==">
+
+		<section>
+			<label for="timelinename" class="input-label">Name:</label>
+			<input type="text" name="timeline[name]" id="timeline_name" maxlength="120" placeholder="(required) Give the timeline a name">
+		</section>
+
+		<section class="description-container">
+			<label for="timeline_description" class="input-label">Notes:</label>
+			<textarea name="timeline[description]" id="timeline_description" maxlength="3000" placeholder="(optional) Add any additional information about this timeline"></textarea>
+		</section>
+
+		<section>
+			<button name="button" type="submit" class="submit primary pure-button pure-button-primary">Update Timeline</button>
+		</section>
+
+			<section class="actions">
+
+				<a class="delete delete-timeline" href="https://www.preceden.com/timelines/339301-story-wars#">Delete Timeline</a>
+			</section></form></div>
+</div>
+
+<div class="settings dialog design">
+	<a class="info misc-sprite sprite-info" title="Learn more about these settings" target="_new" data-target="settings" href="http://support.preceden.com/article/41-settings"></a>
+
+	<form class="settings" autocomplete="off" action="https://www.preceden.com/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Ccl/LW9W7DpGt4UEPL2ELs1och8IknVwoSC+MYIZ9OFCgaUpQHJsuv0K5k1jy6dQtUBQw4YYZboz6UZkccGC/A==">
+		<input type="hidden" name="source" id="source" value="settings">
+		<p class="error-message"></p>
+
+		<section class="sidebar">
+			<ul>
+				<li>
+					<a href="https://www.preceden.com/timelines/339301-story-wars#" id="theme" class="selected">Theme</a>
+				</li>
+					<li>
+						<a href="https://www.preceden.com/timelines/339301-story-wars#" id="visibility" class="unselected">Visibility</a>
+					</li>
+				<li>
+					<a href="https://www.preceden.com/timelines/339301-story-wars#" id="events" class="unselected">Events</a>
+				</li>
+				<li>
+					<a href="https://www.preceden.com/timelines/339301-story-wars#" id="axis" class="unselected">Axis</a>
+				</li>
+				<li>
+					<a href="https://www.preceden.com/timelines/339301-story-wars#" id="zoom" class="unselected">Zoom</a>
+				</li>
+				<li>
+					<a href="https://www.preceden.com/timelines/339301-story-wars#" id="date-picker" class="unselected">Date Picker</a>
+				</li>
+					<li>
+						<a href="https://www.preceden.com/timelines/339301-story-wars#" id="collaboration-new" class="unselected">Collaboration</a>
+					</li>
+					<li>
+						<a href="https://www.preceden.com/timelines/339301-story-wars#" id="csv-import" class="unselected">CSV Import</a>
+					</li>
+			</ul>
+		</section>
+
+		<section class="group" id="theme" style="display: block;">
+			<h2>Theme</h2>
+
+			<p>Learn more about all of these settings on our <a href="http://support.preceden.com/article/41-settings" target="_blank">support site</a>.</p>
+
+			<h3>Theme</h3>
+
+<div class="theme-examples-container">
+		<div class="theme-example theme-example-border white" id="white">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border baige" id="baige">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border aqua-haze" id="aqua-haze">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border light-blue" id="light-blue">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border light-gray" id="light-gray">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border blue-gray" id="blue-gray">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border dark-blue" id="dark-blue">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border dark" id="dark">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border jungle" id="jungle">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>		<div class="theme-example theme-example-border blue" id="blue">
+			<div class="background-example">
+				<div class="axis-theme-example"></div>
+				<div class="line-example"></div>
+				<div class="text-example">2017</div>
+			</div>
+</div>	<input type="hidden" name="timeline[theme]" id="timeline_theme">
+</div>
+
+<div class="theme-custom-axis-style-container">
+	<h3>Custom Axis Background Color </h3>
+	<input type="color" name="timeline[theme_axis_background_color]" id="timeline_theme_axis_background_color">
+
+	<h3>Custom Axis Font Color </h3>
+	<input type="color" name="timeline[theme_axis_font_color]" id="timeline_theme_axis_font_color">
+</div>
+
+<label class="block">
+	<input type="checkbox" name="timeline[display_alternating_layer_colors]" id="timeline_display_alternating_layer_colors" value="1">
+	<span>Alternate layer colors</span>
+	
+</label>
+<h3>Font Size</h3>
+<select name="timeline[font_size]" id="timeline_font_size"><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option><option value="28">28</option></select>
+
+		</section>
+
+		<section class="group" id="visibility" style="display: none;">
+	<h2>Visibility</h2>
+
+
+	<h3>Who should be able to see this timeline?</h3>
+
+	<label class="block">
+		<input type="radio" value="1" name="timeline[visibility]" id="timeline_visibility_1">
+		<span>Everyone including search engines like Google and Bing</span>
+</label>
+	<label class="block">
+		<input type="radio" value="0" checked="checked" name="timeline[visibility]" id="timeline_visibility_0">
+			<span>Only you</span>
+</label>
+	<label class="block">
+		<input type="radio" value="2" name="timeline[visibility]" id="timeline_visibility_2">
+			<span>Password protected</span>
+</label>
+	<div class="access-password-container">
+		<span>Access password:</span>
+		<input type="text" name="timeline[view_password]" id="timeline_view_password" autocomplete="off">
+	</div>
+</section>
+
+
+		<section class="group" id="events" style="display: none;">
+			<h2>Events</h2>
+
+			<h3>Dates</h3>
+			<label>
+				<input type="checkbox" name="timeline[display_event_dates]" id="timeline_display_event_dates" value="1">
+				<span>Add each event's dates in parenthesis beside its name</span>
+				
+</label>
+			<div class="display-event-date-format-container">
+				<select name="timeline[display_event_date_format]">
+					<option value="exact">Use the same format you used for the event dates</option>
+					<option value="YYYY">YYYY (2017)</option>
+					<option value="M/D">M/D (12/20)</option>
+					<option value="M/D/YYYY">M/D/YYYY (12/20/2017)</option>
+					<option value="MMM D">MMM D (Dec 20)</option>
+					<option value="MMM D, YYYY">MMM D, YYYY (Dec 20, 2017)</option>
+					<option value="D/M">D/M (20/12)</option>
+					<option value="D/M/YYYY">D/M/YYYY (20/12/2017)</option>
+					<option value="D MMM">D MMM (20 Dec)</option>
+					<option value="D MMM YYYY">D MMM YYYY (20 Dec 2017)</option>
+					<option value="YYYY-MM-DD">YYYY-MM-DD (2017-12-20)</option>
+					<option value="DD.MM.YYYY">DD.MM.YYYY (20.12.2017)</option>
+					<option value="ddd M/D">ddd M/D (Wed 12/20)</option>
+					<option value="ddd M/D/YY">ddd M/D/YY (Wed 12/20/17)</option>
+				</select>
+
+				<div class="inline-radio-buttons">
+					<h3>Date Position Relative to Event Name </h3>
+
+					<label>
+						<input type="radio" name="timeline[event_dates_position]" id="timeline_event_dates_position_bottom" value="bottom">
+						<span>Bottom</span>
+</label>					<label>
+						<input type="radio" name="timeline[event_dates_position]" id="timeline_event_dates_position_right" value="right">
+						<span>Right</span>
+</label>					<label>
+						<input type="radio" name="timeline[event_dates_position]" id="timeline_event_dates_position_left" value="left">
+						<span>Left</span>
+</label>				</div>
+			</div>
+
+			<h3>Layout</h3>
+			<div>
+				<label>
+					<input type="radio" name="timeline[layout_style]" id="timeline_layout_style_1" value="1">
+					<span>Waterfall: One event per row</span>
+</label>			</div>
+			<div>
+				<label>
+					<input type="radio" name="timeline[layout_style]" id="timeline_layout_style_0" value="0">
+					<span>Collapsed: As many events per row as possible</span>
+</label>			</div>
+
+			<h3>Name Position</h3>
+			<div>
+				<label>
+					<input type="radio" name="timeline[event_name_position]" id="timeline_event_name_position_inside" value="inside">
+					<span>Position event names within the colored bars when the name will fit</span>
+</label>			</div>
+			<div>
+				<label>
+					<input type="radio" name="timeline[event_name_position]" id="timeline_event_name_position_right" value="right">
+					<span>Always position event names to the right of the colored bars</span>
+</label>			</div>
+
+			<h3>Bar Color</h3>
+			<div class="inline-radio-buttons">
+				<label>
+					<input type="radio" name="timeline[event_color_style]" id="timeline_event_color_style_solid" value="solid">
+					<span>Solid</span>
+</label>				<label>
+					<input type="radio" name="timeline[event_color_style]" id="timeline_event_color_style_vertical-gradient" value="vertical-gradient">
+					<span>Vertical Gradient</span>
+</label>				<label>
+					<input type="radio" name="timeline[event_color_style]" id="timeline_event_color_style_horizontal-gradient" value="horizontal-gradient">
+					<span>Horizontal Gradient</span>
+</label>			</div>
+
+			<h3>Corners</h3>
+			<div class="inline-radio-buttons">
+				<label>
+					<input type="radio" name="timeline[event_corner_style]" id="timeline_event_corner_style_square" value="square">
+					<span>Square</span>
+</label>				<label>
+					<input type="radio" name="timeline[event_corner_style]" id="timeline_event_corner_style_slightly-round" value="slightly-round">
+					<span>Slightly Round</span>
+</label>				<label>
+					<input type="radio" name="timeline[event_corner_style]" id="timeline_event_corner_style_round" value="round">
+					<span>Round</span>
+</label>				<label>
+					<input type="radio" name="timeline[event_corner_style]" id="timeline_event_corner_style_s-curve" value="s-curve">
+					<span>S-Curve</span>
+</label>			</div>
+
+			<h3>Past Events</h3>
+			<label>
+				<input type="checkbox" name="timeline[display_past_events_in_gray]" id="timeline_display_past_events_in_gray" value="1">
+				<span>Automatically display events in the past in gray</span>
+				
+</label>		</section>
+
+		<section class="group" id="axis" style="display: none;">
+			<h2>Axis</h2>
+
+			<h3>Position</h3>
+			<label class="block">
+				<input type="checkbox" name="timeline[display_top_axis]" id="timeline_display_top_axis" value="1">
+				<span>Top of the timeline</span>
+</label>			<label class="block">
+				<input type="checkbox" name="timeline[display_layer_axis]" id="timeline_display_layer_axis" value="1">
+				<span>Top of each layer</span>
+</label>			<label class="block">
+				<input type="checkbox" name="timeline[display_bottom_axis]" id="timeline_display_bottom_axis" value="1">
+				<span>Bottom of the timeline</span>
+</label>
+			<h3>Gridlines</h3>
+			<label class="block">
+				<input type="checkbox" name="timeline[display_gridlines]" id="timeline_display_gridlines" value="1">
+				<span>Show axis gridlines</span>
+</label>
+			<h3>Borders</h3>
+			<div class="inline-radio-buttons">
+				<label>
+					<input type="radio" name="timeline[border_position]" id="timeline_border_position_all" value="all">
+					<span>All sides</span>
+</label>				<label>
+					<input type="radio" name="timeline[border_position]" id="timeline_border_position_top" value="top">
+					<span>Top only</span>
+</label>				<label>
+					<input type="radio" name="timeline[border_position]" id="timeline_border_position_bottom" value="bottom">
+					<span>Bottom only</span>
+</label>				<label>
+					<input type="radio" name="timeline[border_position]" id="timeline_border_position_none" value="none">
+					<span>None</span>
+</label>			</div>
+
+			<h3>Event Lines</h3>
+			<label>
+				<input type="checkbox" name="timeline[display_lines_from_events_to_axis]" id="timeline_display_lines_from_events_to_axis" value="1">
+				<span>Show a line from the start of each event to each axis</span>
+</label>
+			<h3>Current Date</h3>
+			<label>
+				<input type="checkbox" name="timeline[display_current_date]" id="timeline_display_current_date" value="1">
+				<span>Display a vertical line on today's date</span>
+</label>		</section>
+
+		<section class="group" id="zoom" style="display: none;">
+			<h2>Zoom</h2>
+
+			<p><b>New!</b> You can now zoom in to a portion of your timeline by clicking anywhere on your timeline and dragging your cursor over a period of time. To zoom back out, click the Zoom Out button that will appear on the top right of your timeline.</p>
+
+			<p>Learn more on our support site: <a href="http://support.preceden.com/article/49-zoom" target="_blank">Zooming Into Your Timeline</a>.</p>
+
+			<h3>Date Range</h3>
+			<div>
+				<label>
+					<input type="radio" name="aperture_date_range" id="aperture_date_range_all" value="all">
+					<span>Automatically calculate the date range</span>
+</label>			</div>
+			<div>
+				<label>
+					<input type="radio" name="aperture_date_range" id="aperture_date_range_portion" value="portion">
+					<span>Zoom in to a specific date range</span>
+</label>			</div>
+			<div class="aperture-date-range-container">
+				<div>
+					<input type="text" name="timeline[aperture_start_at_str]" id="timeline_aperture_start_at_str" placeholder="enter a start date">
+				</div>
+				<div>
+					<input type="text" name="timeline[aperture_end_at_str]" id="timeline_aperture_end_at_str" placeholder="enter an end date">
+				</div>
+			</div>
+
+			<h3>Scale</h3>
+			<select name="timeline[default_zoom]">
+		<option value="auto" selected="selected">Automatically calculate the scale (recommended)</option>
+			<option disabled="disabled"></option>
+		<option value="sec">Seconds</option>
+		<option value="min">Minutes</option>
+		<option value="h">Hours</option>
+		<option value="2h">2 Hours</option>
+		<option value="4h">4 Hours</option>
+		<option value="d">Days</option>
+		<option value="w">Weeks</option>
+		<option value="m">Months</option>
+		<option value="qtr">Quarters</option>
+		<option value="y">Years</option>
+		<option value="2y">2 Years</option>
+		<option value="5y">5 Years</option>
+		<option value="t">Decades</option>
+		<option value="q">Quarter Centuries</option>
+		<option value="f">Half Centirues</option>
+		<option value="c">Centuries</option>
+		<option value="mm">Millenia</option>
+		<option value="10k">10 Millenia</option>
+		<option value="50k">50 Millenia</option>
+</select>
+
+
+			<h3>Week Start </h3>
+			<div class="inline-radio-buttons">
+				<label>
+					<input type="radio" name="timeline[week_start]" id="timeline_week_start_monday" value="monday">
+					<span>Monday</span>
+</label>				<label>
+					<input type="radio" name="timeline[week_start]" id="timeline_week_start_sunday" value="sunday">
+					<span>Sunday</span>
+</label>			</div>
+		</section>
+
+		<section class="group" id="date-picker" style="display: none;">
+			<h2>Date Picker</h2>
+
+			<h3>Date Format</h3>
+			<select name="timeline[datepicker_date_format]">
+				<option value="MMMM D, YYYY">MMMM D, YYYY (December 20, 2017)</option>
+				<option value="MMM D, YYYY">MMM D, YYYY (Dec 20, 2017)</option>
+				<option value="M/D/YYYY">M/D/YYYY (12/20/2017)</option>
+				<option value="M/D/YY">M/D/YY (12/20/17)</option>
+				<option value="D MMMM YYYY">D MMMM YYYY (20 December 2017)</option>
+				<option value="D MMM YYYY">D MMM YYYY (20 Dec 2017)</option>
+				<option value="D MMMM YY">D MMMM YY (20 December 17)</option>
+				<option value="D MMM YY">D MMM YY (20 Dec 17)</option>
+			</select>
+		</section>
+
+		<section class="group" id="collaboration-new" style="display: none;">
+	<h2>Collaboration</h2>
+
+	<p class="loading">Loading...</p>
+
+	<h3 class="hide-while-loading">Collaborators</h3>
+	<p class="status"></p>
+
+	<ul class="collaborators hide-while-loading">
+	</ul>
+
+	<div class="add-new-collaborator hide-while-loading">
+		<h3>Invite a collaborator to work on this timeline with you</h3>
+
+			<p>
+				<i>Collaboration features are only available for upgraded accounts.</i>
+			</p>
+			<p>
+				<a href="https://www.preceden.com/timelines/339301-story-wars#" class="button green upgrade" id="collaboration-upgrade">Upgrade Now</a>
+			</p>
+
+		<input type="email" name="collaborator_email" id="collaborator_email" placeholder="enter the person&#39;s email address" disabled="disabled">
+		<button name="button" type="submit" class="invite-collaborator" disabled="disabled">Invite Collaborator</button>
+		<p class="invitation-sent"></p>
+	</div>
+</section>
+
+		<section class="group" id="csv-import" style="display: none;">
+	<h2>CSV Import</h2>
+
+		<p>Our <a href="http://support.preceden.com/article/16-csv">CSV import tool</a> lets you import events from a CSV file.</p>
+		<p>The tool is available on plans without an event limit.</p>
+		<a href="https://www.preceden.com/timelines/339301-story-wars#" class="button green upgrade" id="csv-import">Upgrade Now</a>
+</section>
+
+
+		<section class="cta">
+			<button name="button" type="submit" class=" primary pure-button pure-button-primary">Update Settings</button>
+		</section>
+</form></div>
+
+
+
+<ol class="tour-guide-tips">
+	<li data-step-name="welcome" data-options="{&quot;element&quot; : &quot;a.add-event&quot;, &quot;position&quot;: &quot;right&quot;, &quot;align&quot;: &quot;center&quot;}">
+		<h2 class="title">Congrats, you signed up&nbsp;successfully!</h2>
+		<p>To add an event to your timeline, click <b>Add&nbsp;Event</b>.</p>
+		<p>
+			The dates on your timeline will automatically adjust as you add events to&nbsp;it.
+		</p>
+	</li>
+
+	<li data-step-name="add_event_instructions" data-options="{&quot;element&quot; : &quot;.event-dialog-container&quot;, &quot;position&quot;: &quot;right&quot;, &quot;align&quot;: &quot;center&quot;, &quot;force_group_to_center&quot;: true}">
+		<p>
+			Preceden gives you a lot of ways to customize the look of the events on your timeline,
+			but for simple events you only need to do two things:
+		</p>
+		<p>
+			1) <b>Give the event a name</b> such as <code>Consultation Phase</code>, <code>Board Presentation</code>, <code>Application Fee Due</code>.
+		</p>
+		<p>
+			2) <b>Enter its start date</b> such as
+			<code class="notranslate">2017</code>, <code class="notranslate">December 2017</code>, <code class="notranslate">20 December 2017</code>, <code class="notranslate">20 December 2017 9:20</code>, <code class="notranslate">Today</code>
+				.
+		</p>
+		<p>That's it - feel free to explore!</p>
+	</li>
+
+	<li data-step-name="finished" data-options="{&quot;position&quot;: &quot;center&quot;, &quot;button&quot;: {&quot;name&quot; : &quot;Done&quot;, &quot;nextStep&quot; : &quot;done&quot;}}">
+		<h2 class="title">Way to go!</h2>
+		<p>Now that you have the basics down, here are a few ideas for what to do next:</p>
+		<ul>
+			<li>Click the "Settings" link above your timeline to customize how it looks</li>
+			<li>Add additional events</li>
+			<li>Share your timeline with others</li>
+		</ul>
+		<p>You’ll also receive our free 5-day <i>Mastering Preceden</i> email mini-course to help you learn how to use Preceden to create stunning timelines.</p>
+		<p>If you ever have any questions, you can email us at help@preceden.com. Thanks!</p>
+	</li>
+</ol>
+
+<div class="color-picker" style="left: 1118.28px; top: 431.188px; display: none;">
+	<table class="palette color-picker-section">
+			<tbody><tr>
+					<td bgcolor="ffcdd2" style="border: 2px solid #ffcdd2"></td>
+					<td bgcolor="F8BBD0" style="border: 2px solid #F8BBD0"></td>
+					<td bgcolor="E1BEE7" style="border: 2px solid #E1BEE7"></td>
+					<td bgcolor="D1C4E9" style="border: 2px solid #D1C4E9"></td>
+					<td bgcolor="C5CAE9" style="border: 2px solid #C5CAE9"></td>
+					<td bgcolor="BBDEFB" style="border: 2px solid #BBDEFB"></td>
+					<td bgcolor="B3E5FC" style="border: 2px solid #B3E5FC"></td>
+					<td bgcolor="B2EBF2" style="border: 2px solid #B2EBF2"></td>
+					<td bgcolor="B2DFDB" style="border: 2px solid #B2DFDB"></td>
+					<td bgcolor="C8E6C9" style="border: 2px solid #C8E6C9"></td>
+					<td bgcolor="DCEDC8" style="border: 2px solid #DCEDC8"></td>
+					<td bgcolor="F0F4C3" style="border: 2px solid #F0F4C3"></td>
+					<td bgcolor="FFF9C4" style="border: 2px solid #FFF9C4"></td>
+					<td bgcolor="FFECB3" style="border: 2px solid #FFECB3"></td>
+					<td bgcolor="FFE0B2" style="border: 2px solid #FFE0B2"></td>
+					<td bgcolor="FFCCBC" style="border: 2px solid #FFCCBC"></td>
+					<td bgcolor="D7CCC8" style="border: 2px solid #D7CCC8"></td>
+					<td bgcolor="F5F5F5" style="border: 2px solid #F5F5F5"></td>
+					<td bgcolor="CFD8DC" style="border: 2px solid #CFD8DC"></td>
+			</tr>
+			<tr>
+					<td bgcolor="ef9a9a" style="border: 2px solid #ef9a9a"></td>
+					<td bgcolor="F48FB1" style="border: 2px solid #F48FB1"></td>
+					<td bgcolor="CE93D8" style="border: 2px solid #CE93D8"></td>
+					<td bgcolor="B39DDB" style="border: 2px solid #B39DDB"></td>
+					<td bgcolor="9FA8DA" style="border: 2px solid #9FA8DA"></td>
+					<td bgcolor="90CAF9" style="border: 2px solid #90CAF9"></td>
+					<td bgcolor="81D4FA" style="border: 2px solid #81D4FA"></td>
+					<td bgcolor="80DEEA" style="border: 2px solid #80DEEA"></td>
+					<td bgcolor="80CBC4" style="border: 2px solid #80CBC4"></td>
+					<td bgcolor="A5D6A7" style="border: 2px solid #A5D6A7"></td>
+					<td bgcolor="C5E1A5" style="border: 2px solid #C5E1A5"></td>
+					<td bgcolor="E6EE9C" style="border: 2px solid #E6EE9C"></td>
+					<td bgcolor="FFF59D" style="border: 2px solid #FFF59D"></td>
+					<td bgcolor="FFE082" style="border: 2px solid #FFE082"></td>
+					<td bgcolor="FFCC80" style="border: 2px solid #FFCC80"></td>
+					<td bgcolor="FFAB91" style="border: 2px solid #FFAB91"></td>
+					<td bgcolor="BCAAA4" style="border: 2px solid #BCAAA4"></td>
+					<td bgcolor="EEEEEE" style="border: 2px solid #EEEEEE"></td>
+					<td bgcolor="B0BEC5" style="border: 2px solid #B0BEC5"></td>
+			</tr>
+			<tr>
+					<td bgcolor="e57373" style="border: 2px solid #e57373"></td>
+					<td bgcolor="F06292" style="border: 2px solid #F06292"></td>
+					<td bgcolor="BA68C8" style="border: 2px solid #BA68C8"></td>
+					<td bgcolor="9575CD" style="border: 2px solid #9575CD"></td>
+					<td bgcolor="7986CB" style="border: 2px solid #7986CB"></td>
+					<td bgcolor="64B5F6" style="border: 2px solid #64B5F6"></td>
+					<td bgcolor="4FC3F7" style="border: 2px solid #4FC3F7"></td>
+					<td bgcolor="4DD0E1" style="border: 2px solid #4DD0E1"></td>
+					<td bgcolor="4DB6AC" style="border: 2px solid #4DB6AC"></td>
+					<td bgcolor="81C784" style="border: 2px solid #81C784"></td>
+					<td bgcolor="AED581" style="border: 2px solid #AED581"></td>
+					<td bgcolor="DCE775" style="border: 2px solid #DCE775"></td>
+					<td bgcolor="FFF176" style="border: 2px solid #FFF176"></td>
+					<td bgcolor="FFD54F" style="border: 2px solid #FFD54F"></td>
+					<td bgcolor="FFB74D" style="border: 2px solid #FFB74D"></td>
+					<td bgcolor="FF8A65" style="border: 2px solid #FF8A65"></td>
+					<td bgcolor="A1887F" style="border: 2px solid #A1887F"></td>
+					<td bgcolor="E0E0E0" style="border: 2px solid #E0E0E0"></td>
+					<td bgcolor="90A4AE" style="border: 2px solid #90A4AE"></td>
+			</tr>
+			<tr>
+					<td bgcolor="ef5350" style="border: 2px solid #ef5350"></td>
+					<td bgcolor="EC407A" style="border: 2px solid #EC407A"></td>
+					<td bgcolor="AB47BC" style="border: 2px solid #AB47BC"></td>
+					<td bgcolor="7E57C2" style="border: 2px solid #7E57C2"></td>
+					<td bgcolor="5C6BC0" style="border: 2px solid #5C6BC0"></td>
+					<td bgcolor="42A5F5" style="border: 2px solid #42A5F5"></td>
+					<td bgcolor="29B6F6" style="border: 2px solid #29B6F6"></td>
+					<td bgcolor="26C6DA" style="border: 2px solid #26C6DA"></td>
+					<td bgcolor="26A69A" style="border: 2px solid #26A69A"></td>
+					<td bgcolor="66BB6A" style="border: 2px solid #66BB6A"></td>
+					<td bgcolor="9CCC65" style="border: 2px solid #9CCC65"></td>
+					<td bgcolor="D4E157" style="border: 2px solid #D4E157"></td>
+					<td bgcolor="FFEE58" style="border: 2px solid #FFEE58"></td>
+					<td bgcolor="FFCA28" style="border: 2px solid #FFCA28"></td>
+					<td bgcolor="FFA726" style="border: 2px solid #FFA726"></td>
+					<td bgcolor="FF7043" style="border: 2px solid #FF7043"></td>
+					<td bgcolor="8D6E63" style="border: 2px solid #8D6E63"></td>
+					<td bgcolor="BDBDBD" style="border: 2px solid #BDBDBD"></td>
+					<td bgcolor="78909C" style="border: 2px solid #78909C"></td>
+			</tr>
+			<tr>
+					<td bgcolor="f44336" style="border: 2px solid #f44336"></td>
+					<td bgcolor="E91E63" style="border: 2px solid #E91E63"></td>
+					<td bgcolor="9C27B0" style="border: 2px solid #9C27B0"></td>
+					<td bgcolor="673AB7" style="border: 2px solid #673AB7"></td>
+					<td bgcolor="3F51B5" style="border: 2px solid #3F51B5"></td>
+					<td bgcolor="2196F3" style="border: 2px solid #2196F3"></td>
+					<td bgcolor="03A9F4" style="border: 2px solid #03A9F4"></td>
+					<td bgcolor="00BCD4" style="border: 2px solid #00BCD4"></td>
+					<td bgcolor="009688" style="border: 2px solid #009688"></td>
+					<td bgcolor="4CAF50" style="border: 2px solid #4CAF50"></td>
+					<td bgcolor="8BC34A" style="border: 2px solid #8BC34A"></td>
+					<td bgcolor="CDDC39" style="border: 2px solid #CDDC39"></td>
+					<td bgcolor="FFEB3B" style="border: 2px solid #FFEB3B"></td>
+					<td bgcolor="FFC107" style="border: 2px solid #FFC107"></td>
+					<td bgcolor="FF9800" style="border: 2px solid #FF9800"></td>
+					<td bgcolor="FF5722" style="border: 2px solid #FF5722"></td>
+					<td bgcolor="795548" style="border: 2px solid #795548"></td>
+					<td bgcolor="9E9E9E" style="border: 2px solid #9E9E9E"></td>
+					<td bgcolor="607D8B" style="border: 2px solid #607D8B"></td>
+			</tr>
+			<tr>
+					<td bgcolor="e53935" style="border: 2px solid #e53935"></td>
+					<td bgcolor="D81B60" style="border: 2px solid #D81B60"></td>
+					<td bgcolor="8E24AA" style="border: 2px solid #8E24AA"></td>
+					<td bgcolor="5E35B1" style="border: 2px solid #5E35B1"></td>
+					<td bgcolor="3949AB" style="border: 2px solid #3949AB" class=""></td>
+					<td bgcolor="1E88E5" style="border: 2px solid #1E88E5" class="selected"></td>
+					<td bgcolor="039BE5" style="border: 2px solid #039BE5"></td>
+					<td bgcolor="00ACC1" style="border: 2px solid #00ACC1"></td>
+					<td bgcolor="00897B" style="border: 2px solid #00897B"></td>
+					<td bgcolor="43A047" style="border: 2px solid #43A047" class=""></td>
+					<td bgcolor="7CB342" style="border: 2px solid #7CB342"></td>
+					<td bgcolor="C0CA33" style="border: 2px solid #C0CA33"></td>
+					<td bgcolor="FDD835" style="border: 2px solid #FDD835"></td>
+					<td bgcolor="FFB300" style="border: 2px solid #FFB300"></td>
+					<td bgcolor="FB8C00" style="border: 2px solid #FB8C00"></td>
+					<td bgcolor="F4511E" style="border: 2px solid #F4511E"></td>
+					<td bgcolor="6D4C41" style="border: 2px solid #6D4C41"></td>
+					<td bgcolor="757575" style="border: 2px solid #757575"></td>
+					<td bgcolor="546E7A" style="border: 2px solid #546E7A"></td>
+			</tr>
+			<tr>
+					<td bgcolor="d32f2f" style="border: 2px solid #d32f2f"></td>
+					<td bgcolor="C2185B" style="border: 2px solid #C2185B"></td>
+					<td bgcolor="7B1FA2" style="border: 2px solid #7B1FA2"></td>
+					<td bgcolor="512DA8" style="border: 2px solid #512DA8"></td>
+					<td bgcolor="303F9F" style="border: 2px solid #303F9F"></td>
+					<td bgcolor="1976D2" style="border: 2px solid #1976D2"></td>
+					<td bgcolor="0288D1" style="border: 2px solid #0288D1"></td>
+					<td bgcolor="0097A7" style="border: 2px solid #0097A7"></td>
+					<td bgcolor="00796B" style="border: 2px solid #00796B"></td>
+					<td bgcolor="388E3C" style="border: 2px solid #388E3C"></td>
+					<td bgcolor="689F38" style="border: 2px solid #689F38"></td>
+					<td bgcolor="AFB42B" style="border: 2px solid #AFB42B"></td>
+					<td bgcolor="FBC02D" style="border: 2px solid #FBC02D"></td>
+					<td bgcolor="FFA000" style="border: 2px solid #FFA000"></td>
+					<td bgcolor="F57C00" style="border: 2px solid #F57C00"></td>
+					<td bgcolor="E64A19" style="border: 2px solid #E64A19"></td>
+					<td bgcolor="5D4037" style="border: 2px solid #5D4037"></td>
+					<td bgcolor="616161" style="border: 2px solid #616161"></td>
+					<td bgcolor="455A64" style="border: 2px solid #455A64"></td>
+			</tr>
+			<tr>
+					<td bgcolor="c62828" style="border: 2px solid #c62828"></td>
+					<td bgcolor="AD1457" style="border: 2px solid #AD1457"></td>
+					<td bgcolor="6A1B9A" style="border: 2px solid #6A1B9A"></td>
+					<td bgcolor="4527A0" style="border: 2px solid #4527A0"></td>
+					<td bgcolor="283593" style="border: 2px solid #283593"></td>
+					<td bgcolor="1565C0" style="border: 2px solid #1565C0"></td>
+					<td bgcolor="0277BD" style="border: 2px solid #0277BD"></td>
+					<td bgcolor="00838F" style="border: 2px solid #00838F"></td>
+					<td bgcolor="00695C" style="border: 2px solid #00695C"></td>
+					<td bgcolor="2E7D32" style="border: 2px solid #2E7D32"></td>
+					<td bgcolor="558B2F" style="border: 2px solid #558B2F"></td>
+					<td bgcolor="9E9D24" style="border: 2px solid #9E9D24"></td>
+					<td bgcolor="F9A825" style="border: 2px solid #F9A825"></td>
+					<td bgcolor="FF8F00" style="border: 2px solid #FF8F00"></td>
+					<td bgcolor="EF6C00" style="border: 2px solid #EF6C00"></td>
+					<td bgcolor="D84315" style="border: 2px solid #D84315"></td>
+					<td bgcolor="4E342E" style="border: 2px solid #4E342E"></td>
+					<td bgcolor="424242" style="border: 2px solid #424242"></td>
+					<td bgcolor="37474F" style="border: 2px solid #37474F"></td>
+			</tr>
+			<tr>
+					<td bgcolor="b71c1c" style="border: 2px solid #b71c1c"></td>
+					<td bgcolor="880E4F" style="border: 2px solid #880E4F"></td>
+					<td bgcolor="4A148C" style="border: 2px solid #4A148C"></td>
+					<td bgcolor="311B92" style="border: 2px solid #311B92"></td>
+					<td bgcolor="1A237E" style="border: 2px solid #1A237E"></td>
+					<td bgcolor="0D47A1" style="border: 2px solid #0D47A1"></td>
+					<td bgcolor="01579B" style="border: 2px solid #01579B"></td>
+					<td bgcolor="006064" style="border: 2px solid #006064"></td>
+					<td bgcolor="004D40" style="border: 2px solid #004D40"></td>
+					<td bgcolor="1B5E20" style="border: 2px solid #1B5E20"></td>
+					<td bgcolor="33691E" style="border: 2px solid #33691E"></td>
+					<td bgcolor="827717" style="border: 2px solid #827717"></td>
+					<td bgcolor="F57F17" style="border: 2px solid #F57F17"></td>
+					<td bgcolor="FF6F00" style="border: 2px solid #FF6F00"></td>
+					<td bgcolor="E65100" style="border: 2px solid #E65100"></td>
+					<td bgcolor="BF360C" style="border: 2px solid #BF360C"></td>
+					<td bgcolor="3E2723" style="border: 2px solid #3E2723"></td>
+					<td bgcolor="212121" style="border: 2px solid #212121"></td>
+					<td bgcolor="263238" style="border: 2px solid #263238"></td>
+			</tr>
+	</tbody></table>
+
+	<div class="recent-colors-container color-picker-section">
+		<p>Recent Colors</p>
+		<table>
+			<tbody><tr>
+					<td id="recent_0" bgcolor="F4511E" style="border: 2px solid rgb(244, 81, 30);"></td>
+					<td id="recent_1" bgcolor="3949AB" style="border: 2px solid rgb(57, 73, 171);"></td>
+					<td id="recent_2" bgcolor="E53935" style="border: 2px solid rgb(229, 57, 53);"></td>
+					<td id="recent_3" bgcolor="43A047" style="border: 2px solid rgb(67, 160, 71);"></td>
+					<td id="recent_4"></td>
+					<td id="recent_5"></td>
+					<td id="recent_6"></td>
+					<td id="recent_7"></td>
+					<td id="recent_8"></td>
+					<td id="recent_9"></td>
+					<td id="recent_10"></td>
+					<td id="recent_11"></td>
+					<td id="recent_12"></td>
+					<td id="recent_13"></td>
+					<td id="recent_14"></td>
+					<td id="recent_15"></td>
+					<td id="recent_16"></td>
+					<td id="recent_17"></td>
+					<td id="recent_18"></td>
+			</tr>
+		</tbody></table>
+	</div>
+
+	<div class="custom-color-container color-picker-section">
+		<p>Custom Color Picker</p>
+		<input type="color" class="html5-color-picker" style="background: rgb(30, 136, 229);"><table>
+			<tbody><tr>
+				
+			</tr>
+		</tbody></table>
+	</div>
+</div>
+
+<div class="symbol-picker" style="display: none;">
+	<div class="symbols notranslate">
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">●</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">✪</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">✵</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">✹</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">▶</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">◆</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">❖</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">◈</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">✦</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">★</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">✔</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">☑ </a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">⚐</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">☁</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">♥</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">✿</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">☼</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">☞</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">⇨</a>
+			<a href="https://www.preceden.com/timelines/339301-story-wars#">↺</a>
+	</div>
+</div>
+
+<div class="dialog hidden pdf">
+	<p class="error"></p>
+
+	<div class="section paper-size-options">
+		<h3>What kind of paper do you want to use?</h3>
+		<div>
+			<input type="radio" name="paper_size" id="paper_size_letter" value="letter">
+			<label for="paper_size_letter">Normal Paper (8½" by 11")</label>
+		</div>
+		<div>
+			<input type="radio" name="paper_size" id="paper_size_legal" value="legal">
+			<label for="paper_size_legal">Legal Paper (8½" by 14")</label>
+		</div>
+		<div>
+			<input type="radio" name="paper_size" id="paper_size_multipage" value="multipage">
+			<label for="paper_size_multipage">Multipage (stretch across multiple 8½" by 11" sheets of paper) - <a target="_blank" href="http://support.preceden.com/article/21-multipage-printing">View instructions</a></label>
+		</div>
+	</div>
+
+	<div class="section paper-orientation-options">
+		<h3>How do you want to orient the paper?</h3>
+		<div>
+			<input type="radio" name="paper_orientation" id="paper_orientation_landscape" value="landscape">
+			<label for="paper_orientation_landscape">Landscape</label>
+		</div>
+		<div>
+			<input type="radio" name="paper_orientation" id="paper_orientation_portrait" value="portrait">
+			<label for="paper_orientation_portrait">Portrait</label>
+		</div>
+	</div>
+
+	<a class="generate-pdf blue button" href="https://www.preceden.com/timelines/339301-story-wars#">Download Printable PDF</a>
+	<a class="download-link" href="https://www.preceden.com/timelines/339301-story-wars#">Download Link</a>
+</div>
+
+<div class="dialog hidden png">
+	<h1>Download PNG</h1>
+	<p class="error"></p>
+
+	<h3>How wide do you want the image?</h3>
+	<div>
+		<label>
+			<input type="radio" name="requested_width" id="requested_width_browser" value="browser">
+			The same width as it appears in your browser
+</label>	</div>
+		<div>
+			<label>
+				<input type="radio" name="requested_width" id="requested_width_800" value="800">
+				800 pixels
+</label>		</div>
+		<div>
+			<label>
+				<input type="radio" name="requested_width" id="requested_width_1000" value="1000">
+				1,000 pixels
+</label>		</div>
+		<div>
+			<label>
+				<input type="radio" name="requested_width" id="requested_width_1200" value="1200">
+				1,200 pixels
+</label>		</div>
+
+	<p>If you run into any issues, you can try <a href="http://take-a-screenshot.com/" target="_blank">taking a screenshot</a> of your timeline which will ensure the image perfectly matches your timeline.</p>
+
+	<a class="generate-png blue button" href="https://www.preceden.com/timelines/339301-story-wars#">Download PNG</a>
+	<a class="download-link" href="https://www.preceden.com/timelines/339301-story-wars#">Download Link</a>
+</div>
+
+<div class="dialog design legend-editor">
+	<h1>Legend</h1>
+	<p>
+			If you would like to color code the events on this timeline, you can use this feature to display a
+			legend on the timeline explaining what each color means. If you leave the description blank for any color
+			we simply won't include it in the legend. You can drag the colors up and down to re-order the legend.
+	</p>
+
+		<form>
+			<div class="section display-legend-container">
+				<label>
+					<input type="checkbox" name="timeline[display_legend]" id="timeline_display_legend" value="1">
+					Display legend on timeline
+</label>			</div>
+			<button name="button" type="submit" class=" primary pure-button pure-button-primary">Update Legend</button>
+		</form>
+</div>
+
+<div class="autocomplete" style="display: none;">
+	<ul></ul>
+</div>
+
+<div class="dialog design share-link">
+	<h1>Share a link to your timeline</h1>
+	<p>The URL below is the same as the web address displayed in your browser. The URL will continue to work even if you later rename your timeline.</p>
+	<form autocomplete="off">
+		<p>Web address:</p>
+		<input type="text" name="url" id="timeline-url" readonly="readonly">
+			<button class="copy-url-to-clipboard primary pure-button pure-button-primary" data-clipboard-target="timeline-url">
+				Copy
+			</button>
+
+		<p>HTML link:</p>
+		<input type="text" name="link" id="html-link" readonly="readonly">
+			<button class="copy-html-link-to-clipboard primary pure-button pure-button-primary" data-clipboard-target="html-link">
+				Copy
+			</button>
+	</form>
+</div>
+
+
+<div class="dialog design recommendations">
+	<h2>Event Recommendations</h2>
+	<p class="status"></p>
+</div>
+
+<div class="dialog design reorder-layers">
+	<h1>Reorder Layers</h1>
+	<p>Drag the layers up and down to reorder them, then click Update Order:</p>
+	<form>
+		<ul class="ordered-layers"></ul>
+		<button name="button" type="submit" class=" primary pure-button pure-button-primary">Update Order</button>
+	</form>
+</div>
+
+<div class="small-screen-notice">
+	To see a visualization of your timeline and gain access to advanced customization options, switch to a device with a larger screen&nbsp;size.
+</div>
+
+
+
+
+
+		
+
+		<div class="dialog alert modal">
+	<form action="https://www.preceden.com/timelines/339301-story-wars#" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Ccl/LW9W7DpGt4UEPL2ELs1och8IknVwoSC+MYIZ9OFCgaUpQHJsuv0K5k1jy6dQtUBQw4YYZboz6UZkccGC/A==">
+		<div class="message constrain-content"></div>
+		<button name="button" type="submit" class="ok extra-padding align-right primary pure-button pure-button-primary">OK</button>
+</form></div>
+
+		<div class="dialog design prompt modal">
+	<form autocomplete="off" action="https://www.preceden.com/timelines/339301-story-wars#" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Ccl/LW9W7DpGt4UEPL2ELs1och8IknVwoSC+MYIZ9OFCgaUpQHJsuv0K5k1jy6dQtUBQw4YYZboz6UZkccGC/A==">
+		<div class="message constrain-content"></div>
+		<input type="text" name="response" id="response">
+		<button name="button" type="submit" class="ok extra-padding align-right primary pure-button pure-button-primary">OK</button>
+</form></div>
+
+		<div class="dialog confirm modal">
+	<form action="https://www.preceden.com/timelines/339301-story-wars#" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Ccl/LW9W7DpGt4UEPL2ELs1och8IknVwoSC+MYIZ9OFCgaUpQHJsuv0K5k1jy6dQtUBQw4YYZboz6UZkccGC/A==">
+		<div class="message constrain-content"></div>
+		<button name="button" type="submit" class="no extra-padding align-right primary pure-button pure-button-primary">No</button>
+		<button name="button" type="submit" class="yes extra-padding align-right primary pure-button pure-button-primary">Yes</button>
+</form></div>
+
+		
+</div>
+
+
+			<script type="text/javascript">
+	var _dcq = _dcq || [];
+	var _dcs = _dcs || {};
+	_dcs.account = '3089522';
+
+	(function() {
+		var dc = document.createElement('script');
+		dc.type = 'text/javascript'; dc.async = true;
+		dc.src = '//tag.getdrip.com/3089522.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(dc, s);
+	})();
+</script>
+
+			<!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("2033d7bf69646fa66ad4d5ee778df97d");</script><!-- end Mixpanel -->
+			<script type="text/javascript">
+	(function(e,t){var n=e.amplitude||{};var r=t.createElement("script");r.type="text/javascript";
+	r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-2.9.0-min.gz.js";
+	r.onload=function(){e.amplitude.runQueuedFunctions()};var s=t.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(r,s);var i=function(){this._q=[];return this};function a(e){
+	i.prototype[e]=function(){this._q.push([e].concat(Array.prototype.slice.call(arguments,0)));
+	return this}}var o=["add","append","clearAll","set","setOnce","unset"];for(var c=0;c<o.length;c++){
+	a(o[c])}n.Identify=i;n._q=[];function u(e){n[e]=function(){n._q.push([e].concat(Array.prototype.slice.call(arguments,0)));
+	}}var l=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties"];
+	for(var p=0;p<l.length;p++){u(l[p])}e.amplitude=n})(window,document);
+
+	amplitude.init("a948d242ba47fa74e5b1b526ae3024f4");
+</script>
+
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4712727-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+		<script>
+  (function(d) {
+    var config = {
+      kitId: 'iqb8mys',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+
+		<script src="./Story Wars _ Preceden_files/jquery.min.js"></script>
+
+			<script src="./Story Wars _ Preceden_files/saved_resource(1)"></script>
+
+		<script>
+			App.Analytics.registerSuperProperty( 'account type', 'independent' );
+
+
+					App.Analytics.aliasUser( 'joakim.johansson@storywars.net' );
+
+
+					
+					
+
+				App.Analytics.identifyUser( 'joakim.johansson@storywars.net' );
+		</script>
+
+		
+		
+<script>
+$(function() {
+tourGuide = new TourGuide();
+tourGuide.showTip('welcome');
+});
+</script>
+<script>
+var timelineSettings = {};
+timelineSettings.enableAutocomplete = false;
+timelineSettings.isFirstTimeline = true;
+timelineSettings.locale = 'sv-SE';
+timelineSettings.visibilityMap = {"visibility_0":"Private","visibility_1":"Public","visibility_2":"Password Protected"}
+timelineSettings.creatorHasExpiredAccount = false;
+timelineSettings.plan = {};
+timelineSettings.plan.hasEventLimit = true;
+timelineSettings.plan.eventLimit = 5;
+timelineSettings.plan.privateTimelines = true;
+timelineSettings.plan.passwordProtectedTimelines = false;
+</script>
+<script>
+$(function() {
+App.Analytics.recordEvent('signed up', {"utm_source":null,"editor variation":null,"email variation":null,"upgrade_price_variation":null,"settings_variation":null,"upgrade_button_variation":null,"your_timelines_link_visibility_variation":null,"timeline visibility":0,"initial_page":"/","vertical":"work","viewed_pricing_section":false,"last_section_viewed":"features","initial_plan_id":55});
+});
+</script>
+<script>
+$(function() {
+App.Analytics.Drip.identify( 'joakim.johansson@storywars.net', ["Free Account"] );
+});
+</script>
+<script>
+$(function() {
+App.Analytics.Drip.track( 'Signed Up' );
+});
+</script>
+
+		<script src="./Story Wars _ Preceden_files/pa-5a2dbcb36f8fe50008000116.js" async=""></script>
+	
+
+	
+
+</section>
+
+	
+
+</div></div><div class="scale-notice" style="display: none;">
+	<h3>Your timeline cannot be viewed at this scale</h3>
+	<p><a href="https://www.preceden.com/timelines/339301-story-wars#" class="change-scale-to-auto">Have Preceden determine the best scale</a></p>
+	<a href="http://support.preceden.com/article/46-scale-issues" class="resolving-scaling-issues external" target="_blank">Why am I seeing this notice?</a>
+</div></body></html>
